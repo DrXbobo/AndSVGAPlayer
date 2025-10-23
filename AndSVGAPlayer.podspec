@@ -18,15 +18,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '15.0'
   s.swift_version = '5.0'
 
-  s.subspec 'Core' do |ss|
-    # 把 ProtoFiles 的头文件也加入 Core 编译路径
-    ss.source_files  = "Source/*.{h,m}", "Source/pbobjc/*.{h,m}"
-    ss.requires_arc = true
-    ss.dependency 'SSZipArchive', '~> 2.4.3'
-    ss.library = "z"
-    ss.framework = "AVFoundation"
-  end
-
   s.subspec 'ProtoFiles' do |ss|
     ss.source_files  = "Source/pbobjc/*.{h,m}"
     ss.requires_arc = false
@@ -35,4 +26,13 @@ Pod::Spec.new do |s|
       'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1',
     }
   end 
+
+  s.subspec 'Core' do |ss|
+    ss.source_files  = "Source/*.{h,m}"
+    ss.requires_arc = true
+    ss.dependency 'SSZipArchive', '~> 2.4.3'
+    ss.dependency 'AndSVGAPlayer/ProtoFiles'   # ✅ 核心修改
+    ss.library = "z"
+    ss.framework = "AVFoundation"
+  end
 end
