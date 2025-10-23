@@ -6,27 +6,25 @@
 #  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
 #
 
-Pod::Spec.new do |spec|
-  spec.name         = "AndSVGAPlayer"
-  spec.version      = "0.1.0"
-  spec.summary      = "A short description of AndSVGAPlayer."
+Pod::Spec.new do |s|
+  s.name         = "AndSVGAPlayer"
+  s.version      = "0.1.0"
+  s.summary      = "A short description of AndSVGAPlayer."
 
-  spec.description  = <<-DESC
+  s.description  = <<-DESC
   iOS SVGAPlayer, fix bugs
                    DESC
 
-  spec.homepage     = "https://github.com/DrXbobo/AndSVGAPlayer"
+  s.homepage     = "https://github.com/DrXbobo/AndSVGAPlayer"
   
 
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wenbo xu' => 'xuwenbo@sencent.com' }
+  s.source           = { :git => "https://github.com/DrXbobo/AndSVGAPlayer.git", :tag => s.version.to_s }
 
   s.ios.deployment_target = '15.0'
 
-  spec.source       = { :git => "https://github.com/DrXbobo/AndSVGAPlayer.git", :tag => s.version.to_s }
-
-
-  spec.source_files  = "Source", "Source/**/*.{h,m}"
-  spec.public_header_files = "Source/**/*.h"
+  s.source_files  = "Source", "Source/**/*.{h,m}"
+  s.public_header_files = "Source/**/*.h"
 
 end
