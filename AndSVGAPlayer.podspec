@@ -24,7 +24,21 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '15.0'
 
-  s.source_files  = "Source", "Source/**/*.{h,m}"
-  s.public_header_files = "Source/**/*.h"
+  s.subspec 'Core' do |ss|
+    ss.source_files  = "Source/*.{h,m}"
+    ss.requires_arc = true
+    ss.dependency 'SSZipArchive', '~> 2.6.0'
+    ss.library = "z"
+    ss.framework = "AVFoundation"
+    ss.dependency 'SVGAPlayer/ProtoFiles'
+  end
+  s.subspec 'ProtoFiles' do |ss|
+    ss.source_files  = "Source/pbobjc/*.{h,m}"
+    ss.requires_arc = false
+    ss.dependency 'Protobuf', '~> 4.33.0'
+    ss.pod_target_xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1',
+    }
+  end 
 
 end
