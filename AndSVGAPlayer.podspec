@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wenbo xu' => 'xuwenbo@sencent.com' }
-  s.source           = { :git => "https://github.com/DrXbobo/AndSVGAPlayer.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/DrXbobo/AndSVGAPlayer.git" }
 
   s.ios.deployment_target = '15.0'
 
