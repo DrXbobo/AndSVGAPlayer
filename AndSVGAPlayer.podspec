@@ -8,14 +8,14 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "AndSVGAPlayer"
-  spec.version      = "0.0.1"
+  spec.version      = "0.1.0"
   spec.summary      = "A short description of AndSVGAPlayer."
 
   spec.description  = <<-DESC
   iOS SVGAPlayer, fix bugs
                    DESC
 
-  spec.homepage     = "http://EXAMPLE/AndSVGAPlayer"
+  spec.homepage     = "https://github.com/DrXbobo/AndSVGAPlayer"
   
 
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -23,7 +23,7 @@ Pod::Spec.new do |spec|
 
   s.ios.deployment_target = '15.0'
 
-  spec.source       = { :git => "http://EXAMPLE/AndSVGAPlayer.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/DrXbobo/AndSVGAPlayer.git", :tag => s.version.to_s }
 
 
   spec.source_files  = "Source", "Source/**/*.{h,m}"
